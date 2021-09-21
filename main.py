@@ -4,6 +4,8 @@
 from graphics import *
 
 
+
+
 def drawBG(width, height, color, window):
 		background = Rectangle(Point(0, 0),Point(width, height))
 		background.setFill(color)
@@ -16,7 +18,14 @@ def drawCirc(x, y, radius, color, window):
 	 head.setFill(color)
 	 head.setOutline(color)
 	 head.draw(window)
+	 body = bodyCircle(startX, startY, headRadius, headColor, snowWind)
 
+def bodyCircle(x, y, radius, color, window):
+	for i in range(1, 3):
+		head = Circle(Point(x, y - (i * 2 *radius)), radius + ( 3 * i))
+		head.setFill(color)
+		head.setOutline(color)
+		head.draw(window)
 
 def hill(width, height, color, window):
 	snowHill = Polygon(Point(0, 0), Point(width, 0), Point(0, height))
@@ -25,9 +34,9 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 6
-startX = 20
-startY = 480
+headRadius = 10
+startX = 200
+startY = 200
 headColor = color_rgb(200, 200, 200)
 maxHeight = 500
 maxWidth = 500
