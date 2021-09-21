@@ -1,0 +1,17 @@
+[[package]]
+name = "graphics.py"
+version = "5.0.1.post1"
+description = "John Zelles graphics.py package, for use with the textbook \"Python Programming: An Introduction to Computer Science\""
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "0b7dd15b20103a2ef4a941533dba4915197b3194f2b7cfbdeb658d0fcd9f8c06"
+
+[metadata.files]
+"graphics.py" = [
+    {file = "graphics.py-5.0.1.post1.tar.gz", hash = "sha256:583561cc577447e452fb2b1352c0fc615396b12b30dfbbce48e8190d2e330a97"},
+]
