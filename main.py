@@ -24,7 +24,8 @@ def drawCirc(x, y, radius, color, window):
 
 def bodyCircle(x, y, radius, color, window):
 	for i in range(1, 3):
-		head = Circle(Point(x, y - (i * 2 *radius)), radius + ( 6 * i))
+		print(radius + ( 6 * i))
+		head = Circle(Point(x, y - (i * 2 * radius)), radius + (radius * 0.3 * i))
 		head.setFill(color)
 		head.setOutline(color)
 		head.draw(window)
@@ -36,7 +37,7 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 20
+headRadius = 25
 startX = 200
 startY = 200
 headColor = color_rgb(200, 200, 200)
