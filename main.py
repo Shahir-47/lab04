@@ -3,7 +3,9 @@
 
 from graphics import *
 
-
+def drawEyes(eX, eY, eRradius, eColor, eWindow):
+	for d in range (2) :
+		eye = Circle(Point(e, ))
 
 
 def drawBG(width, height, color, window):
@@ -11,7 +13,7 @@ def drawBG(width, height, color, window):
 		background.setFill(color)
 		background.setOutline(color)
 		background.draw(window)
-		hillSide = hill(maxWidth, maxHeight, hillColor, snowWind)
+
 
 def drawCirc(x, y, radius, color, window):
 	 head = Circle(Point(x,y), radius)
@@ -22,7 +24,7 @@ def drawCirc(x, y, radius, color, window):
 
 def bodyCircle(x, y, radius, color, window):
 	for i in range(1, 3):
-		head = Circle(Point(x, y - (i * 2 *radius)), radius + ( 3 * i))
+		head = Circle(Point(x, y - (i * 2 *radius)), radius + ( 6 * i))
 		head.setFill(color)
 		head.setOutline(color)
 		head.draw(window)
@@ -34,7 +36,7 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 10
+headRadius = 20
 startX = 200
 startY = 200
 headColor = color_rgb(200, 200, 200)
@@ -47,7 +49,7 @@ snowWind = GraphWin("Winter is coming", maxHeight, 500)
 snowWind.setCoords(0, 0, maxHeight, 500)
 
 blueBackground = drawBG(maxWidth, maxHeight, bgColor, snowWind)
-
+head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
 snowWind.getMouse()
 snowWind.close()
