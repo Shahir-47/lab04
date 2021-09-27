@@ -51,7 +51,7 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 20
+headRadius = 8
 startX = 200
 startY = 200
 headColor = color_rgb(200, 200, 200)
