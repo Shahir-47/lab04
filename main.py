@@ -5,10 +5,18 @@ from graphics import *
 
 def draw_eyes(eX, eY, eRadius, eWindow):
 	for i in range (2) :
-		eye = Circle(Point((eX-eRadius) + ((i + 1)*eRadius*0.8)-(i * 0.4 * eRadius),eY + (0.4*eRadius)), 0.1 * eRadius)
+		eye = Circle(Point((eX-eRadius) + (eRadius*0.7)+(i * 0.6 * eRadius),eY + (0.275*eRadius)), 0.1 * eRadius)
 		eye.setFill(color_rgb(0, 0, 0))
 		eye.setOutline(color_rgb(0, 0, 0))
 		eye.draw(eWindow)
+		draw_nose(eX, eY, eRadius, eWindow)
+
+def draw_nose(nX, nY, nRadius, nWindow):
+	nose = Polygon(Point(nX - (0.2 * nRadius), nY), Point(nX + (0.2 * nRadius), nY), Point(nX, nY - (0.5 * nRadius)))
+	nose.setFill(color_rgb(255, 165, 0))
+	nose.setOutline(color_rgb(255, 165, 0))
+	nose.draw(nWindow)
+
 
 
 def drawBG(width, height, color, window):
@@ -43,7 +51,7 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 80
+headRadius = 20
 startX = 200
 startY = 200
 headColor = color_rgb(200, 200, 200)
