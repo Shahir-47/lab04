@@ -3,9 +3,12 @@
 
 from graphics import *
 
-def drawEyes(eX, eY, eRradius, eColor, eWindow):
-	for d in range (2) :
-		eye = Circle(Point(e, ))
+def draw_eyes(eX, eY, eRadius, eWindow):
+	for i in range (2) :
+		eye = Circle(Point((eX-eRadius) + ((i + 1)*eRadius*0.8)-(i * 0.4 * eRadius),eY + (0.4*eRadius)), 0.1 * eRadius)
+		eye.setFill(color_rgb(0, 0, 0))
+		eye.setOutline(color_rgb(0, 0, 0))
+		eye.draw(eWindow)
 
 
 def drawBG(width, height, color, window):
@@ -20,15 +23,18 @@ def drawCirc(x, y, radius, color, window):
 	 head.setFill(color)
 	 head.setOutline(color)
 	 head.draw(window)
-	 body = bodyCircle(startX, startY, headRadius, headColor, snowWind)
+	 bodyCircle(x, y, radius, color, window)
 
 def bodyCircle(x, y, radius, color, window):
 	for i in range(1, 3):
-		print(radius + ( 6 * i))
 		head = Circle(Point(x, y - (i * 2 * radius)), radius + (radius * 0.3 * i))
 		head.setFill(color)
 		head.setOutline(color)
 		head.draw(window)
+
+	draw_eyes(x, y, radius, window)
+
+
 
 def hill(width, height, color, window):
 	snowHill = Polygon(Point(0, 0), Point(width, 0), Point(0, height))
@@ -37,7 +43,7 @@ def hill(width, height, color, window):
 	snowHill.draw(window)
 	head = drawCirc(startX, startY, headRadius, headColor, snowWind)
 
-headRadius = 25
+headRadius = 80
 startX = 200
 startY = 200
 headColor = color_rgb(200, 200, 200)
@@ -50,7 +56,7 @@ snowWind = GraphWin("Winter is coming", maxHeight, 500)
 snowWind.setCoords(0, 0, maxHeight, 500)
 
 blueBackground = drawBG(maxWidth, maxHeight, bgColor, snowWind)
-head = drawCirc(startX, startY, headRadius, headColor, snowWind)
+drawCirc(startX, startY, headRadius, headColor, snowWind)
 
 snowWind.getMouse()
 snowWind.close()
